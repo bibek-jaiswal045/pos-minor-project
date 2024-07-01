@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --border-color: #e1e1e1;
+    --primary-color: rgb(105, 105, 209);
+    --body-color: #000;
+    --text-hover-color: cyan;
+}
+
+.container{
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+li{
+    list-style: none;
+}
+
+nav, ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav{
+    justify-content: space-between;
+    padding: 20px 0 ;
+}
+
+ul{
+    justify-content: space-between;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+a{
+    text-decoration: none;
+    color: var(--body-color);
+}
+
+a:hover{
+    color: var(--text-hover-color);
+    transition: 0.5s all ease-in-out;
+    border-bottom: 1px solid var(--text-hover-color);
+}
+
+h1{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.top-header{
+    padding: 10px 40px;
+    background-color: var(--primary-color);
+}
+
+.top-header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-header a:hover{
+    color: #fff;
+    border: none;
+}
+
+/* Register and login Page */
+
+form{
+    width: 100%;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+form input{
+    padding: 10px;
+    border: var(--border-color);
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+form div{
+    padding: 10px 0;
+}
+
+form button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+form button:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+}
+form p{
+    text-align: center;
+}
