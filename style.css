@@ -42,22 +42,27 @@ aside{
 aside ul li a{
     width: 100%;
     display: block;
+    padding: 8px 16px;
 }
 
 aside ul li{
-    padding: 8px 16px;
     border: 1px solid black;
     border-radius: 8px;
     margin: 10px 0;
     cursor: pointer;
 }
 
-aside ul li:hover{
+aside ul li a:hover{
     background-color: var(--tertiary-color);
-    /* opacity: 40%; */
     color: #fff;
     border-color: var(--tertiary-color);
     transition: 0.3s ease-in-out;
+}
+
+aside ul li a:active{
+    background-color: var(--tertiary-color);
+    color: #fff;
+    border-color: var(--tertiary-color);
 }
 
 .content{
