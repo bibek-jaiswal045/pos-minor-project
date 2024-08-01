@@ -5,8 +5,10 @@
 }
 
 :root{
-    --border-color: #e1e1e1;
-    --primary-color: rgb(105, 105, 209);
+    --border-color: #9CA986;
+    --primary-color: #C9DABF;
+    --secondary-color: #808D7C;
+    --tertiary-color: #5F6F65;
     --body-color: #000;
     --text-hover-color: cyan;
 }
