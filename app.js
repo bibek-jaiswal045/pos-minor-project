@@ -1,6 +1,7 @@
 let custTable = document.getElementById('customers-table');
 let prodTable = document.getElementById('products-table');
 let catTable = document.getElementById('categories-table');
+let supTable = document.getElementById('suppliers-table');
 const nameList = [
     'Time', 'Past', 'Future', 'Dev',
     'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
@@ -144,7 +145,7 @@ for(let i = 0; i < 20; i++) {
     const cell3 = document.createElement('td');
     const cell4 = document.createElement('td');
     cell1.innerHTML = i + 1;
-    if(custBool){
+    if(custBool || suppBool){
         cell2.innerHTML = nameList[Math.floor(Math.random() * nameList.length)] + ' ' + nameList[Math.floor(Math.random() * nameList.length)];
     } else if(prodBool) {
         cell2.innerHTML = prodList[Math.floor(Math.random() * prodList.length)] + ' ' + prodList[Math.floor(Math.random() * prodList.length)];
@@ -157,7 +158,7 @@ for(let i = 0; i < 20; i++) {
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
-    if(!catBool){
+    if(!catBool && !suppBool){
         row.appendChild(cell4);
     }
     if(custBool){
@@ -166,6 +167,8 @@ for(let i = 0; i < 20; i++) {
         prodTable.appendChild(row);
     }else if(catBool){
         catTable.appendChild(row);
+    } else if(suppBool){
+        supTable.appendChild(row);
     }
 
 }
