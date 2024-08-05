@@ -6,6 +6,49 @@
     <title>Support</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        
+form{
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form input{
+    padding: 10px;
+    border: var(--border-color);
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+form div{
+    padding: 10px 0;
+}
+
+form button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: #000;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+form button:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+}
+form p{
+    text-align: center;
+}
+
+textarea{
+    width: 100%;
+}
+
+</style>
 </head>
 <body>
     <div class="container">
@@ -26,8 +69,23 @@
             </aside>
 
             <section class="content">
-                <h2>Products</h2>
-                <p>Welcome to our cutting-edge POS Inventory System, designed to revolutionize the way businesses manage their sales and inventory. Our system offers a seamless, intuitive, and efficient solution for retail operations of all sizes. With our POS Inventory System, you can streamline your daily operations, enhance customer satisfaction, and drive business growth.</p>
+                <h2>Support</h2>
+                <form action="/">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Your message here.."></textarea>
+                    </div>
+        
+                    <button type="submit">Send Ticket</button>
+                </form>
             </section>
         </div>
 
