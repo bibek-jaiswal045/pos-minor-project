@@ -1,5 +1,6 @@
 let custTable = document.getElementById('customers-table');
 let prodTable = document.getElementById('products-table');
+let catTable = document.getElementById('categories-table');
 const nameList = [
     'Time', 'Past', 'Future', 'Dev',
     'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
@@ -94,6 +95,33 @@ const prodList = [
     "Gaming Controller"
 ];
 
+const productCategories = [
+    "Clothing",
+    "Sports",
+    "Electronics",
+    "Home and Furniture",
+    "Grocery",
+    "Beauty and Personal Care",
+    "Automotive",
+    "Books and Stationery",
+    "Toys and Games",
+    "Jewelry and Accessories",
+    "Health and Wellness",
+    "Pet Supplies",
+    "Garden and Outdoor",
+    "Baby and Kids",
+    "Music and Entertainment",
+    "Office Supplies",
+    "Kitchenware",
+    "Footwear",
+    "Outdoor Gear",
+    "Cleaning Supplies",
+    "Luggage and Travel Gear",
+    "Tools and Hardware",
+    "Bedding and Linens",
+    "Party Supplies",
+    "Art and Craft Supplies"
+];
 
 // Date related methods
 function dateToYMD(date) {
@@ -120,6 +148,8 @@ for(let i = 0; i < 20; i++) {
         cell2.innerHTML = nameList[Math.floor(Math.random() * nameList.length)] + ' ' + nameList[Math.floor(Math.random() * nameList.length)];
     } else if(prodBool) {
         cell2.innerHTML = prodList[Math.floor(Math.random() * prodList.length)] + ' ' + prodList[Math.floor(Math.random() * prodList.length)];
+    } else if(catBool){
+        cell2.innerHTML = productCategories[i];
     }
     cell3.innerHTML = Math.floor(Math.random() * 100) + 1;
     cell4.innerHTML = randomDate(new Date(2012, 0, 1), new Date());
@@ -127,11 +157,15 @@ for(let i = 0; i < 20; i++) {
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
-    row.appendChild(cell4);
+    if(!catBool){
+        row.appendChild(cell4);
+    }
     if(custBool){
         custTable.appendChild(row);
     } else if(prodBool){
         prodTable.appendChild(row);
+    }else if(catBool){
+        catTable.appendChild(row);
     }
 
 }
