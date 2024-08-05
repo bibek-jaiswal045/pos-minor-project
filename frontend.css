@@ -12,6 +12,10 @@
     --body-color: #000;
     --text-hover-color: rgb(144, 240, 162);
 }
+html{
+    scroll-behavior: smooth;
+}
+
 
 body{
     font-size: 16px;
@@ -34,9 +38,19 @@ nav, ul{
     align-items: center;
     gap: 20px;
 }
+
+header .nav-cont{
+    background-color: #fff;
+}
+
 nav{
     justify-content: space-between;
-    padding: 20px 0 ;
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+nav .logo:hover{
+    border-bottom: 0px;
 }
 
 ul{
@@ -64,8 +78,15 @@ h2{
     margin: 20px 0;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 .top-header{
-    padding: 10px 40px;
+    padding: 20px 40px;
     background-color: var(--primary-color);
 }
 
@@ -123,6 +144,15 @@ form p{
 
 /* Home Page */
 
+section{
+    padding: 40px 0;
+}
+
+.introduction{
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
 .feature-overview{
     display: flex;
     justify-content: space-between;
@@ -144,4 +174,62 @@ form p{
 
 .single-feature ul li{
     padding-top: 10px;
+}
+
+/* Testimonial section */
+
+.testimonial-wrapper .content{
+    width: 100%; 
+    line-height: 1.6;
+    white-space: inherit;
+    text-overflow: ellipsis;
+}
+
+.testimonial-wrapper .author-data img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
+.testimonial-wrapper .author-data p span{
+    color: #FFFF55;
+}
+
+.testimonial-wrapper .author-data{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.testimonial-wrapper .author-data h4{
+    margin: 10px 0;
+}
+
+/* About section */
+
+.about-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.about-wrapper figure{
+    width: 50%;
+}
+
+.about-wrapper figure img{
+    max-width: 550px;
+    border-radius: 8px;
+}
+
+.about-wrapper .about-content{
+    max-width: calc(50%-20px);
+}
+
+.about-wrapper .about-content p{
+    margin-top: 16px;
+    line-height: 1.6;
 }
