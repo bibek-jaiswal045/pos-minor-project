@@ -13,6 +13,12 @@
     --text-hover-color: rgb(144, 240, 162);
 }
 
+body{
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    color: #000;
+}
+
 .container{
     max-width: 1140px;
     padding: 0 15px;
@@ -37,9 +43,6 @@ ul{
     justify-content: space-between;
 }
 
-body{
-    font-family: "Roboto", sans-serif;
-}
 a{
     text-decoration: none;
     color: var(--body-color);
