@@ -45,7 +45,7 @@ header .nav-cont{
 
 nav{
     justify-content: space-between;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     padding: 20px 0;
 }
 
