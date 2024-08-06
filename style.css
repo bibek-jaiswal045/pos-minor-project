@@ -254,3 +254,9 @@ th, td{
     margin-top: 20px;
     cursor: pointer;
 }
+
+.clone, .edit, .danger{
+    opacity: 0.5;
+    margin: 0 5px;
+    cursor: pointer;
+}

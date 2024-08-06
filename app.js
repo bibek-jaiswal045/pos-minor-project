@@ -144,6 +144,8 @@ for(let i = 0; i < 20; i++) {
     const cell2 = document.createElement('td');
     const cell3 = document.createElement('td');
     const cell4 = document.createElement('td');
+    const cell5 = document.createElement('td');
+    // shall we add actions column also??
     cell1.innerHTML = i + 1;
     if(custBool || suppBool){
         cell2.innerHTML = nameList[Math.floor(Math.random() * nameList.length)] + ' ' + nameList[Math.floor(Math.random() * nameList.length)];
@@ -154,6 +156,7 @@ for(let i = 0; i < 20; i++) {
     }
     cell3.innerHTML = Math.floor(Math.random() * 100) + 1;
     cell4.innerHTML = randomDate(new Date(2012, 0, 1), new Date());
+    cell5.innerHTML = `<span class="material-symbols-outlined edit">edit</span><span class="material-symbols-outlined clone">content_copy</span><span class="material-symbols-outlined danger">delete</span>`;
 
     row.appendChild(cell1);
     row.appendChild(cell2);
@@ -161,6 +164,7 @@ for(let i = 0; i < 20; i++) {
     if(!catBool && !suppBool){
         row.appendChild(cell4);
     }
+    row.appendChild(cell5);
     if(custBool){
         custTable.appendChild(row);
     } else if(prodBool){
