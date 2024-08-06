@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting</title>
+    <title>Reset Password</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>        
+        input{
+            padding: 10px;
+            border: var(--border-color);
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        label{
+            display: block;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        button{
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            background-color: var(--secondary-color);
+            border: 3px solid var(--secondary-color);
+            color: #000;
+            margin: 40px 0;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,7 +50,7 @@
                         <li><a href="categories.html">Categories</a></li>
                         <li><a href="report.html">Report</a></li>
                         <li><a href="salesPage.html">Sales Page</a></li>
-                        <li><a href="settings.html" class="active">Settings</a></li>
+                        <li><a href="settings.html" class="active">Reset Password</a></li>
                         <li><a href="suppliers.html">Suppliers</a></li>
                         <li><a href="support.html">Support</a></li>
                         <li><a href="/frontPages/index.html">Software Page</a></li>
@@ -27,8 +58,17 @@
             </aside>
 
             <section class="content">
-                <h2>Products</h2>
-                <p>Welcome to our cutting-edge POS Inventory System, designed to revolutionize the way businesses manage their sales and inventory. Our system offers a seamless, intuitive, and efficient solution for retail operations of all sizes. With our POS Inventory System, you can streamline your daily operations, enhance customer satisfaction, and drive business growth.</p>
+                <h2>Reset Password</h2>
+                <form action="/">
+                    <label for="old-password">Old Password</label>
+                    <input type="password" id="old-password" name="old-password" required>
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+                
             </section>
         </div>
 
