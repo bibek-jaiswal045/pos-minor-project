@@ -101,6 +101,21 @@ header{
     border: none;
 }
 
+.introduction{
+    background: url("/images/dashboard/intro.avif") rgba(0, 0, 0, 0.7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    color: #fff;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+.introduction h2{
+    font-size: 32px;
+}
+
 /* Register and login Page */
 
 form{
