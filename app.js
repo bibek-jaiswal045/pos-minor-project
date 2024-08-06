@@ -1,4 +1,5 @@
 let custTable = document.getElementById('customers-table');
+let dashTable = document.getElementById('dash-table');
 let prodTable = document.getElementById('products-table');
 let catTable = document.getElementById('categories-table');
 let supTable = document.getElementById('suppliers-table');
@@ -138,7 +139,7 @@ function randomDate(start, end) {
     return dateToYMD(tempDate)
 }
 
-for(let i = 0; i < 20; i++) {
+for(let i = 0; dashBool ? i < 5 : i < 20; i++) {
     const row = document.createElement('tr');
     const cell1 = document.createElement('td');
     const cell2 = document.createElement('td');
@@ -147,7 +148,7 @@ for(let i = 0; i < 20; i++) {
     const cell5 = document.createElement('td');
     // shall we add actions column also??
     cell1.innerHTML = i + 1;
-    if(custBool || suppBool){
+    if(custBool || suppBool || dashBool){
         cell2.innerHTML = nameList[Math.floor(Math.random() * nameList.length)] + ' ' + nameList[Math.floor(Math.random() * nameList.length)];
     } else if(prodBool) {
         cell2.innerHTML = prodList[Math.floor(Math.random() * prodList.length)] + ' ' + prodList[Math.floor(Math.random() * prodList.length)];
@@ -173,6 +174,8 @@ for(let i = 0; i < 20; i++) {
         catTable.appendChild(row);
     } else if(suppBool){
         supTable.appendChild(row);
+    }else if(dashBool){
+        dashTable.appendChild(row);
     }
 
 }

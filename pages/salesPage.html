@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -27,12 +29,146 @@
             </aside>
 
             <section class="content">
-                <h2>Products</h2>
-                <p>Welcome to our cutting-edge POS Inventory System, designed to revolutionize the way businesses manage their sales and inventory. Our system offers a seamless, intuitive, and efficient solution for retail operations of all sizes. With our POS Inventory System, you can streamline your daily operations, enhance customer satisfaction, and drive business growth.</p>
+                <p class="title">Sales Page</p>
+
+                <div class="card-wrapper">
+                    <div class="single-card">
+                        <div class="card-content">
+                            <p>Sales Profit</p>
+                            <p class="success">43%</p>
+                        </div>
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                trending_up
+                                </span>
+                        </div>
+                    </div>
+                    <div class="single-card">
+                        <div class="card-content">
+                            <p>Client Redemption</p>
+                            <p class="danger">5%</p>
+                        </div>
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                trending_down
+                                </span>
+                        </div>
+                    </div>
+                    <div class="single-card">
+                        <div class="card-content">
+                            <p>Products</p>
+                            <p>40</p>
+                        </div>
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                inventory_2
+                                </span>
+                        </div>
+                    </div>
+                    <div class="single-card">
+                        <div class="card-content">
+                            <p>Customers</p>
+                            <p>150</p>
+                        </div>
+                        <div class="icon">
+                            <span class="material-symbols-outlined ">
+                                group_add
+                                </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sales-content">
+
+                    <div class="top-sales">
+                        <div class="sale-head">
+                            <p>Today's  Upsales</p>
+                            <a href="#">See All</a>
+                        </div>
+                        <div class="sale-wrapper">
+                            <div class="single-sale">
+                                <div class="image">
+                                    <img src="/images/dashboard/chino.jpeg" alt="chino">
+                                </div>
+                                <div class="sale-data">
+                                    <p class="strong">Chino Pants</p>
+                                    <p>Order: <span class="amount strong">50</span></p>
+                                </div>
+                            </div>
+                            <div class="single-sale">
+                                <div class="image">
+                                    <img src="/images/dashboard/moisturizer.jpeg" alt="moisturizer">
+                                </div>
+                                <div class="sale-data">
+                                    <p class="strong">Moisturizer</p>
+                                    <p>Order: <span class="amount strong">42</span></p>
+                                </div>
+                            </div>
+                            <div class="single-sale">
+                                <div class="image">
+                                    <img src="/images/dashboard/cricket-kit.jpeg" alt="cricket-kit">
+                                </div>
+                                <div class="sale-data">
+                                    <p class="strong">Cricket Kit</p>
+                                    <p>Order: <span class="amount strong">35</span></p>
+                                </div>
+                            </div>
+                            <div class="single-sale">
+                                <div class="image">
+                                    <img src="/images/dashboard/denver.jpeg" alt="denver">
+                                    
+                                </div>
+                                <div class="sale-data">
+                                    <p class="strong">Denver Perfume</p>
+                                    <p>Order: <span class="amount strong">30</span></p>
+                                </div>
+                            </div>
+                            <div class="single-sale">
+                                <div class="image">
+                                    <img src="/images/dashboard/saree.jpeg" alt="saree">
+                                    
+                                </div>
+                                <div class="sale-data">
+                                    <p class="strong">Banarasi Saree</p>
+                                    <p>Order: <span class="amount strong">25</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="graph">
+                        <p>Accepted Orders</p>
+                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                    </div>
+                </div>
+
             </section>
         </div>
 
         
     </div>
+    <script>
+        var xValues = ["Clothing", "Beauty Products", "Sports", "Fragrances"];
+        var yValues = [55, 49, 44, 24];
+        var barColors = ["red", "green","blue","orange"];
+        
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Products Overview"
+                }
+            },
+        });
+    </script>
 </body>
 </html>

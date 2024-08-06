@@ -31,116 +31,32 @@
             <section class="content">
                 <p class="title">Dashboard</p>
 
-                <div class="card-wrapper">
-                    <div class="single-card">
-                        <div class="card-content">
-                            <p>Sales Profit</p>
-                            <p class="success">43%</p>
-                        </div>
-                        <div class="icon">
-                            <span class="material-symbols-outlined">
-                                trending_up
-                                </span>
-                        </div>
-                    </div>
-                    <div class="single-card">
-                        <div class="card-content">
-                            <p>Client Redemption</p>
-                            <p class="danger">5%</p>
-                        </div>
-                        <div class="icon">
-                            <span class="material-symbols-outlined">
-                                trending_down
-                                </span>
-                        </div>
-                    </div>
-                    <div class="single-card">
-                        <div class="card-content">
-                            <p>Products</p>
-                            <p>40</p>
-                        </div>
-                        <div class="icon">
-                            <span class="material-symbols-outlined">
-                                inventory_2
-                                </span>
-                        </div>
-                    </div>
-                    <div class="single-card">
-                        <div class="card-content">
-                            <p>Customers</p>
-                            <p>150</p>
-                        </div>
-                        <div class="icon">
-                            <span class="material-symbols-outlined ">
-                                group_add
-                                </span>
-                        </div>
-                    </div>
+                <div>
+                    <canvas id="myChart" style="width:100%;height: 300px;"></canvas>
                 </div>
-
-                <div class="sales-content">
-
-                    <div class="top-sales">
-                        <div class="sale-head">
-                            <p>Today's  Upsales</p>
-                            <a href="#">See All</a>
-                        </div>
-                        <div class="sale-wrapper">
-                            <div class="single-sale">
-                                <div class="image">
-                                    <img src="/images/dashboard/chino.jpeg" alt="chino">
-                                </div>
-                                <div class="sale-data">
-                                    <p class="strong">Chino Pants</p>
-                                    <p>Order: <span class="amount strong">50</span></p>
-                                </div>
-                            </div>
-                            <div class="single-sale">
-                                <div class="image">
-                                    <img src="/images/dashboard/moisturizer.jpeg" alt="moisturizer">
-                                </div>
-                                <div class="sale-data">
-                                    <p class="strong">Moisturizer</p>
-                                    <p>Order: <span class="amount strong">42</span></p>
-                                </div>
-                            </div>
-                            <div class="single-sale">
-                                <div class="image">
-                                    <img src="/images/dashboard/cricket-kit.jpeg" alt="cricket-kit">
-                                </div>
-                                <div class="sale-data">
-                                    <p class="strong">Cricket Kit</p>
-                                    <p>Order: <span class="amount strong">35</span></p>
-                                </div>
-                            </div>
-                            <div class="single-sale">
-                                <div class="image">
-                                    <img src="/images/dashboard/denver.jpeg" alt="denver">
-                                    
-                                </div>
-                                <div class="sale-data">
-                                    <p class="strong">Denver Perfume</p>
-                                    <p>Order: <span class="amount strong">30</span></p>
-                                </div>
-                            </div>
-                            <div class="single-sale">
-                                <div class="image">
-                                    <img src="/images/dashboard/saree.jpeg" alt="saree">
-                                    
-                                </div>
-                                <div class="sale-data">
-                                    <p class="strong">Banarasi Saree</p>
-                                    <p>Order: <span class="amount strong">25</span></p>
-                                </div>
-                            </div>
-                        </div>
+                
+                <div class="cust-dash-table">
+                    <div class="search">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                        <input type="text" placeholder="Search customers...">
                     </div>
-                    
-                    <div class="graph">
-                        <p>Accepted Orders</p>
-                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                    <div class="date">
+                        <p style="display: inline-block;"><strong>AUGUST 2024</strong></p>
+                        <p style="display: inline-block;"><strong>Total Customer: 150</strong></p>
                     </div>
+                    <table id="dash-table">
+                        <tr>
+                            <th>NO</th>
+                            <th>ORDER DATE</th>
+                            <th>TOTAL CUSTOMER</th>
+                            <th>REVENUE</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </table>
                 </div>
+                
 
             </section>
         </div>
@@ -148,27 +64,38 @@
         
     </div>
     <script>
-        var xValues = ["Clothing", "Beauty Products", "Sports", "Fragrances"];
-        var yValues = [55, 49, 44, 24];
-        var barColors = ["red", "green","blue","orange"];
+        const custBool = false;
+        const catBool = false;
+        const suppBool = false;
+        const prodBool = false;
+        const dashBool = true;
+        const xValues = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const yValues = [10, 10, 10, 24, 28, 40, 32, 34, 42, 40, 50, 60];
         
         new Chart("myChart", {
-            type: "bar",
+            type: "line",
             data: {
                 labels: xValues,
                 datasets: [{
-                backgroundColor: barColors,
-                data: yValues
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
                 }]
             },
             options: {
                 legend: {display: false},
+                scales: {
+                    yAxes: [{ticks: {min: 0, max:70}}],
+                },
                 title: {
-                display: true,
-                text: "Products Overview"
+                    display: true,
+                    text: "Total Revenue: $60k"
                 }
-            },
+            }
         });
-    </script>
+        </script>
+        <script src="/app.js"></script>
 </body>
 </html>

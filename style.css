@@ -145,6 +145,46 @@ aside ul li a:hover{
     flex-wrap: wrap;
 }
 
+.cust-dash-table .search{
+    position: relative;
+}
+
+.cust-dash-table .search span{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding-left: 4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.cust-dash-table{
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.cust-dash-table .search input{
+    width: 300px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.cust-dash-table .search input::placeholder{
+    padding-left: 16px;
+}
+
+.cust-dash-table table{
+    margin-top: 20px;
+}
+
+.cust-dash-table .date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sales Page */
+
 .single-card{
     border: 2px solid var(--border-color);
     text-align: center;
