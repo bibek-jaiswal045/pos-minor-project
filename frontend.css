@@ -165,6 +165,9 @@ section{
 
 .introduction{
     margin-top: 30px;
+}
+
+.introduction .container p{
     line-height: 1.6;
 }
 
