@@ -78,6 +78,10 @@ aside{
     left: 20px;
 }
 
+aside img{
+    margin: 20px auto;
+}
+
 aside ul li a{
     width: 100%;
     display: block;
