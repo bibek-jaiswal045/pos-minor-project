@@ -120,6 +120,10 @@ aside ul li a:hover{
     right: 20px;
 }
 
+.content h2{
+    display: inline-flex;
+}
+
 /* Dashboard */
 
 .content .title{
@@ -238,4 +242,15 @@ table{
 th, td{
     border: 1px solid var(--border-color);
     padding: 10px;
+}
+
+.add-btn{
+    background-color: var(--tertiary-color);
+    float: right;
+    display: inline-flex;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
 }
