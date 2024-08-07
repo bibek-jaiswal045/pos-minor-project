@@ -79,7 +79,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
         fetch('https://randomuser.me/api/?results=20')
             .then(response => response.json())
             .then(data => {
-                const tableName = custBool ? custTable : supTable;
+                let tableName= dashTable;
+                if (custBool) {
+                    tableName = custTable;
+                } else if (suppBool) {
+                    tableName = supTable;
+                } else {
+                    tableName = dashTable;
+                }
                 tableName.innerHTML = `
                     <thead>
                         <tr>
@@ -91,7 +98,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         </tr>
                     </thead>
                     <tbody>
-                        ${data.results.slice(0, 20).map((element, index) => `
+                        ${data.results.slice(0, dashBool ? 5 : 20).map((element, index) => `
                             <tr>
                                 <td>${index + 1}</td>
                                 <td><img src="${element.picture.large}" alt="User Image" /></td>
@@ -115,7 +122,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         fetchProducts();
     } else if (catBool) {
         fetchCategories();
-    } else if (custBool || suppBool) {
+    } else if (custBool || suppBool || dashBool) {
         fetchCustomersOrSuppliers();
     }
 });
