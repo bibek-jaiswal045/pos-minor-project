@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="/pages/dashboard.html">
+        <form id="loginForm">
             <h1>Login</h1>
             <div>
                 <label for="email">Email</label>
@@ -37,10 +37,24 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password">
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" onclick="login()">Login</button>
             <p>Don't have an account? <a href="register.html">Register</a></p>
         </form>
     </div>
+    <script>
+        function login(){
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            if(email === '' || password === ''){
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const form = document.getElementById('loginForm');
+            form.action = "/pages/dashboard.html";
+            form.submit();
+        }
+    </script>
 </body>
 </html>
 

@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="/pages/dashboard.html">
+        <form id="registerForm">
             <h1>Register</h1>
             <div>
                 <label for="name">Name</label>
@@ -81,6 +81,9 @@
                 alert("Passwords do not match");
                 return;
             }
+            const form = document.getElementById("registerForm");
+            form.action = "/pages/dashboard.html";
+            form.submit();
         }
     </script>
 </body>
