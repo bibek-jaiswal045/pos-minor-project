@@ -86,12 +86,43 @@ textarea{
                         <textarea name="message" id="message" rows="5" placeholder="Your message here.."></textarea>
                     </div>
         
-                    <button type="submit">Send Ticket</button>
+                    <button type="submit" onclick="submitTicket()">Send Ticket</button>
                 </form>
             </section>
         </div>
 
         
     </div>
+    <script>
+        const submitTicket = () =>{
+            const form = document.querySelector('form');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (validateInputs()) {
+                    alert('Ticket sent successfully');
+                    nameInput.value = '';
+                    emailInput.value = '';
+                    messageInput.value = '';
+                    window.href('/');
+                }
+            });
+        }
+
+        const validateInputs = () =>{
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            if (nameInput.value === '' || emailInput.value === '' || messageInput.value === '') {
+                alert('Please fill in all fields');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
